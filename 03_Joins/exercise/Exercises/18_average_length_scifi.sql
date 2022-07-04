@@ -2,7 +2,7 @@
 --Name the column 'average_length'.
 -- (1 row, expected result around 110-120)
 
-SELECT ROUND(AVG(length_minutes)) AS average_length
+SELECT AVG(length_minutes) AS average_length
 FROM genre AS g
 
 JOIN movie_genre AS mg ON
