@@ -12,6 +12,6 @@ JOIN genre AS g ON
 g.genre_id = mg.genre_id
 
 WHERE genre_name = 'Comedy'
-ORDER BY release_date DESC;
+ORDER BY release_date ASC;
 
 
