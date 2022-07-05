@@ -7,3 +7,7 @@
 INSERT INTO movie (title, overview, release_date, length_minutes)
 VALUES ('Euclidean Pi', 'The epic story of Euclid as a pizza delivery
 boy in ancient Greece', '2015-03-14','194');
+
+UPDATE movie 
+SET release_date = '3/14/2015'
+WHERE title = 'Euclidean Pi';
