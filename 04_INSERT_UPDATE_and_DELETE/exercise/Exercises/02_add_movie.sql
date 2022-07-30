@@ -11,6 +11,6 @@ boy in ancient Greece', '2015-03-14','194');
 -- SET release_date = '3/14/2015'
 -- WHERE title = 'Euclidean Pi';
 
-UPDATE movie 
-SET overview = 'The epic story of Euclid as a pizza delivery boy in ancient Greece'
-WHERE title = 'Euclidean Pi';
+-- UPDATE movie 
+-- SET overview = 'The epic story of Euclid as a pizza delivery boy in ancient Greece'
+-- WHERE title = 'Euclidean Pi';

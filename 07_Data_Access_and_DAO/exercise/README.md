@@ -1,3 +1,4 @@
+
 # Database connectivity (DAO) exercises
 
 For this exercise, you'll be responsible for implementing the data access objects for a CLI application that manages information for employees, departments, and projects. The purpose of this exercise is to practice writing application code that interacts with a database.
