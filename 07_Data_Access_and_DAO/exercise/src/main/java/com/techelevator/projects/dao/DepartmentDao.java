@@ -7,7 +7,10 @@ import java.util.List;
 public interface DepartmentDao {
 
 
+
+
 	/**
+	 * helper method or service class
 	 * Get a department from the datastore that belongs to the given id.
 	 * If the id is not found, return null.
 	 *

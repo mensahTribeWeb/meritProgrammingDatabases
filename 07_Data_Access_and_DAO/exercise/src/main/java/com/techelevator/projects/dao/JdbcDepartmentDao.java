@@ -6,6 +6,7 @@ import java.util.List;
 import javax.sql.DataSource;
 import javax.sql.RowSet;
 
+import com.techelevator.projects.model.Employee;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
@@ -20,17 +21,22 @@ public class JdbcDepartmentDao implements DepartmentDao {
 	}
 
 	@Override
+	public Department getDepartment(Integer departmentId) {
+		return null;
+	}
+
+	@Override
 	public Department getDepartment(int id) {
-		Department department = null;
+		Department departments = null;
 		String sql =
 				"SELECT department_id, name " +
 						"FROM department  " +
 						"WHERE department_id = ?;";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
-		if(results.next()) {
-			department = mapRowToDepartment(results);
+		while(results.next()) {
+			 departments = mapRowToDepartment(results);
 		}
-		return department;
+		return departments;
 	}
 
 	@Override
@@ -48,15 +54,20 @@ public class JdbcDepartmentDao implements DepartmentDao {
 
 	@Override
 	public void updateDepartment(Department updatedDepartment) {
+		String sql =
+				"UPDATE department "+
+				"SET name = ? "+
+				"WHERE department_id = ?;";
+		jdbcTemplate.update(sql, updatedDepartment.getName(), updatedDepartment.getId());
 
 	}
 
-	private Department mapRowToDepartment(SqlRowSet rowSet){
-		Department department = new Department();
-		department.setId(rowSet.getInt("department_id"));
-		department.setName(rowSet.getString("name"));
+	private Department mapRowToDepartment(SqlRowSet results){
+		Department departments = new Department();
+		departments.setId(results.getInt("department_id"));
+		departments.setName(results.getString("name"));
 
-		return department;
+		return departments;
 	}
 
 }
