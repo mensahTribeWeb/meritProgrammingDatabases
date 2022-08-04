@@ -17,13 +17,31 @@ public class AuctionService {
 
 
     public Auction add(Auction newAuction) {
-        // place code here
-        return null;
+        HttpEntity <Auction> entity = makeEntity(newAuction);
+       Auction auction =null;
+       try{
+         auction = restTemplate.postForObject(API_BASE_URL, entity, Auction.class);
+       }catch (RestClientResponseException rre){
+         BasicLogger.log(rre.getRawStatusCode() + " : " + rre.getStatusText());
+       }catch(ResourceAccessException rae){
+           BasicLogger.log(rae.getMessage());
+       }
+
+        return auction;
     }
 
     public boolean update(Auction updatedAuction) {
-        // place code here
-        return false;
+        Boolean success =false;
+        try{
+            auction = restTemplate.postForObject(API_BASE_URL, entity, Auction.class);
+        }catch (RestClientResponseException rre){
+            BasicLogger.log(rre.getRawStatusCode() + " : " + rre.getStatusText());
+        }catch(ResourceAccessException rae){
+            BasicLogger.log(rae.getMessage());
+        }
+
+        return success;
+
     }
 
     public boolean delete(int auctionId) {
