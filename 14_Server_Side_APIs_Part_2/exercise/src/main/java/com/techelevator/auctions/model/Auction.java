@@ -8,13 +8,13 @@ import javax.validation.constraints.Positive;
 public class Auction {
 
     private int id;
-    @NotBlank(message = "The title field  should not be blank")
+    @NotBlank(message = "The title field should not be blank.")
     private String title;
-    @NotBlank(message = "The title description  should not be blank")
+    @NotBlank(message = "The description field should not be blank.")
     private String description;
-    @NotBlank(message = "The title user  should not be blank")
+    @NotBlank(message = "The user field should not be blank.")
     private String user;
-    @Positive(message = "The currentBid field  should be greater than 0.")
+    @Positive(message = "The currentBid field should be greater than 0.")
     private double currentBid;
 
     public Auction() {
