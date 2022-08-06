@@ -1,10 +1,7 @@
 package com.techelevator.locations.controllers;
 
 import com.techelevator.locations.model.Location;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,6 +62,13 @@ public class LocationController {
             locations.add(location);
             return location;
         }
+        return null;
+    }
+    @RequestMapping(path="/locations/{id}")
+    public Location getLocationId(@PathVariable int id){
+        for(Location loc : locations )
+            if (loc.getId()==id)
+                return loc;
         return null;
     }
 
