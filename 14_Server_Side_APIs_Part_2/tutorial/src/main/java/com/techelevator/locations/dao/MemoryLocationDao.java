@@ -2,13 +2,12 @@ package com.techelevator.locations.dao;
 
 import com.techelevator.locations.exception.LocationNotFoundException;
 import com.techelevator.locations.model.Location;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-
-import org.springframework.stereotype.Component;
 
 @Component
 public class MemoryLocationDao implements LocationDao {
